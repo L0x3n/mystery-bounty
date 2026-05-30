@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: mystery-bounty
+    runtime: static
+    buildCommand: pnpm install && pnpm run build
+    staticPublishPath: ./dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
